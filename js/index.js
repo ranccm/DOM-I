@@ -84,3 +84,18 @@ contentText[4].textContent = siteContent["main-content"]["vision-content"];
 
 let middleImg = document.getElementById('middle-img')
 middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
+
+
+
+//contact
+
+contentHeaders[5].textContent = siteContent['contact']['contact-h4']
+
+contentText[5].textContent = siteContent['contact']['address']
+contentText[6].textContent = siteContent['contact']['phone']
+contentText[7].textContent = siteContent['contact']['email']
+
+
+//footer
+
+contentText[8].textContent = siteContent['footer']['copyright']
