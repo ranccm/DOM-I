@@ -41,15 +41,14 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-let links = document.getElementsByTagName('a')
+let links = document.querySelectorAll('a')
 
-links[0].textContent = "Services";
-links[1].textContent = "Product";
-links[2].textContent = "Vision";
-links[3].textContent = "Features";
-links[4].textContent = "About";
-links[5].textContent = "Content";
-
+links[0].textContent = siteContent["nav"]["nav-item-1"];
+links[1].textContent = siteContent["nav"]["nav-item-2"];
+links[2].textContent = siteContent["nav"]["nav-item-3"];
+links[3].textContent = siteContent["nav"]["nav-item-4"];
+links[4].textContent = siteContent["nav"]["nav-item-5"];
+links[5].textContent = siteContent["nav"]["nav-item-6"];
 
 //cta section
 
@@ -65,4 +64,23 @@ codeImg.setAttribute('src', siteContent["cta"]["img-src"])
 
 //main content
 
-let topContent = document.getElementsByClassName('top-content')
+let contentHeaders = document.querySelectorAll('h4')
+let contentText = document.querySelectorAll('p')
+
+contentHeaders[0].textContent = siteContent["main-content"]["features-h4"];
+contentText[0].textContent = siteContent["main-content"]["features-content"];
+
+contentHeaders[1].textContent = siteContent["main-content"]["about-h4"];
+contentText[1].textContent = siteContent["main-content"]["about-content"];
+
+contentHeaders[2].textContent = siteContent["main-content"]["services-h4"];
+contentText[2].textContent = siteContent["main-content"]["services-content"];
+
+contentHeaders[3].textContent = siteContent["main-content"]["product-h4"];
+contentText[3].textContent = siteContent["main-content"]["product-content"];
+
+contentHeaders[4].textContent = siteContent["main-content"]["vision-h4"];
+contentText[4].textContent = siteContent["main-content"]["vision-content"];
+
+let middleImg = document.getElementById('middle-img')
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
