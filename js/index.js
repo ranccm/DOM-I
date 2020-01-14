@@ -37,18 +37,47 @@ const siteContent = {
   },
 };
 
+
+//navbar
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-let links = document.querySelectorAll('a')
+let nav = document.querySelector('nav');
+let links = document.querySelectorAll('a');
 
-links[0].textContent = siteContent["nav"]["nav-item-1"];
-links[1].textContent = siteContent["nav"]["nav-item-2"];
-links[2].textContent = siteContent["nav"]["nav-item-3"];
-links[3].textContent = siteContent["nav"]["nav-item-4"];
-links[4].textContent = siteContent["nav"]["nav-item-5"];
-links[5].textContent = siteContent["nav"]["nav-item-6"];
+
+for (let i = 0; i < links.length; i++){
+  links[i].textContent = siteContent['nav'][Object.keys(siteContent['nav'])[i]];
+  // links[i].style.color = 'green';
+}
+
+// links.forEach( element => {
+//   element.style.color = 'green';
+
+// });
+
+//append and prepend
+
+let newLink1 = document.createElement('a');
+let newLink2 = document.createElement('a');
+
+newLink1.textContent = 'something';
+newLink1.href = '#';
+newLink1.style.color= 'green';
+newLink2.textContent = 'nothing';
+newLink2.href = '#';
+newLink2.style.color= 'green';
+
+
+nav.appendChild(newLink1);
+nav.prepend(newLink2);
+
+links.forEach( element => {
+  element.style.color = 'green';
+
+});
+
 
 //cta section
 
