@@ -49,12 +49,11 @@ let links = document.querySelectorAll('a');
 
 for (let i = 0; i < links.length; i++){
   links[i].textContent = siteContent['nav'][Object.keys(siteContent['nav'])[i]];
-  // links[i].style.color = 'green';
+  links[i].style.color = 'green';
 }
 
 // links.forEach( element => {
 //   element.style.color = 'green';
-
 // });
 
 //append and prepend
@@ -73,10 +72,6 @@ newLink2.style.color= 'green';
 nav.appendChild(newLink1);
 nav.prepend(newLink2);
 
-links.forEach( element => {
-  element.style.color = 'green';
-
-});
 
 
 //cta section
@@ -93,38 +88,54 @@ codeImg.setAttribute('src', siteContent["cta"]["img-src"])
 
 //main content
 
-let contentHeaders = document.querySelectorAll('h4')
-let contentText = document.querySelectorAll('p')
+let contentHeaders = document.querySelectorAll('.main-content h4')
+let contentText = document.querySelectorAll('.main-content p')
+let mainContent = siteContent['main-content']
 
-contentHeaders[0].textContent = siteContent["main-content"]["features-h4"];
-contentText[0].textContent = siteContent["main-content"]["features-content"];
+ headerKeys = Object.keys(mainContent).filter(key => key.includes('-h4'));
+ paraKeys = Object.keys(mainContent).filter(key => key.includes('-content'));
 
-contentHeaders[1].textContent = siteContent["main-content"]["about-h4"];
-contentText[1].textContent = siteContent["main-content"]["about-content"];
+for (i = 0; i < contentHeaders.length; i++){
+  contentHeaders[i].textContent = mainContent[headerKeys[i]];
+}
 
-contentHeaders[2].textContent = siteContent["main-content"]["services-h4"];
-contentText[2].textContent = siteContent["main-content"]["services-content"];
+for (i = 0; i < contentText.length; i++){
+  contentText[i].textContent = mainContent[paraKeys[i]];
+}
 
-contentHeaders[3].textContent = siteContent["main-content"]["product-h4"];
-contentText[3].textContent = siteContent["main-content"]["product-content"];
+// contentHeaders[0].textContent = siteContent["main-content"]["features-h4"];
+// contentText[0].textContent = siteContent["main-content"]["features-content"];
 
-contentHeaders[4].textContent = siteContent["main-content"]["vision-h4"];
-contentText[4].textContent = siteContent["main-content"]["vision-content"];
+// contentHeaders[1].textContent = siteContent["main-content"]["about-h4"];
+// contentText[1].textContent = siteContent["main-content"]["about-content"];
+
+// contentHeaders[2].textContent = siteContent["main-content"]["services-h4"];
+// contentText[2].textContent = siteContent["main-content"]["services-content"];
+
+// contentHeaders[3].textContent = siteContent["main-content"]["product-h4"];
+// contentText[3].textContent = siteContent["main-content"]["product-content"];
+
+// contentHeaders[4].textContent = siteContent["main-content"]["vision-h4"];
+// contentText[4].textContent = siteContent["main-content"]["vision-content"];
 
 let middleImg = document.getElementById('middle-img')
 middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
 
 
 
-//contact
+// //contact
 
-contentHeaders[5].textContent = siteContent['contact']['contact-h4']
+// contentHeaders[5].textContent = siteContent['contact']['contact-h4']
 
-contentText[5].textContent = siteContent['contact']['address']
-contentText[6].textContent = siteContent['contact']['phone']
-contentText[7].textContent = siteContent['contact']['email']
+// contentText[5].textContent = siteContent['contact']['address']
+// contentText[6].textContent = siteContent['contact']['phone']
+// contentText[7].textContent = siteContent['contact']['email']
 
 
-//footer
+let contact = siteContent['contact'];
 
-contentText[8].textContent = siteContent['footer']['copyright']
+
+
+// //footer
+
+// contentText[8].textContent = siteContent['footer']['copyright']
